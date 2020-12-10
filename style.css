@@ -1,0 +1,62 @@
+body{
+    margin-left: 16%;
+    margin-top: 0;
+    margin-right: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    font-weight: 550;
+}
+.box-1{
+    background-color: rgb(49, 48, 48);
+    height: 609px;
+    width: 70%;
+    border-radius: 60px;
+    position: absolute;
+    
+}
+.box-2{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+    background-color: black;
+    height: 500px;
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 0;
+    border-radius: 60px;
+    color: white;
+    text-align: center;
+}
+#messageTaskBar{
+    
+}
+#smartTime{
+    font-size: 15px;
+    margin-bottom: 0;
+    padding-top: 10px;
+    margin-top: 0;
+}
+#displayBox{
+    grid-area: 2/1/span 2/span 1;
+}
+#smartTimeBig{
+    font-size: 50px;
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+#smartDay{
+    font-size: 20px;
+    font-weight: 500;
+}
+.fa{
+   margin-left: 5%;
+   margin-right: 5%;
+   margin-top: 65px;
+}
+.fa:hover{
+ color: grey;
+}
+#message1:hover{
+    color: grey;
+}
+
