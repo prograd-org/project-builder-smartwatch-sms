@@ -1,0 +1,48 @@
+body{
+    background-color: cornsilk;
+    padding:10%;
+}
+h1{
+    text-align: center;
+    color:brown;
+}
+.SW {
+    width: 250px;
+    height: 260px;
+    background-color: black;
+    border: 20px rgb(53, 52, 52) solid;
+    border-left: none;
+    border-right: none;
+    border-radius: 40px;
+    margin: auto;
+  }
+  
+  #firsttime{
+      color: white;
+      font-size: larger;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 5px;
+  }
+  .imgs{
+      margin-top: 10px;
+      display:flex;
+      justify-content:space-around;
+  }
+  .imgs>img{
+      width:40px
+  }
+  .msg{
+      position: static;
+      background-color: white;
+      margin: 5%;
+      border-radius: 20%;
+      height:150px;
+      line-height: 2;
+  }
+  #msg1,#msg2,#msg3{
+      position:relative;
+      top:5%;
+      margin-left:10%;
+  }
