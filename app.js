@@ -1,47 +1,74 @@
-function time() {
-    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-    let date = new Date()
-    let hr = date.getHours()
-    let min = date.getMinutes()
-    let day = date.getDay()
+var updateTime = setInterval(showTimeDay, 1000); // update time for every 1s
 
+//showing time and day
+function showTimeDay() {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() ; //getting time 
 
-    hr = hr < 10 ? "0" + hr : hr
-    min = min < 10 ? "0" + min : min
-    let timeformat = hr + ":" + min
+    document.getElementById('topTime').innerHTML = time
 
-    document.querySelector(".smalltime").innerHTML = timeformat
-    document.querySelector(".time").innerHTML = timeformat
-    document.querySelector(".day").innerHTML = days[day]
+    document.getElementById('time').innerHTML = time; //showing time on page
+
+    var weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];//array of days
+    document.getElementById('day').innerHTML = weekDays[today.getDay()] // showing todays day on page
+
 }
-let timer = setInterval(time, 1000)
-document.querySelector(".message").addEventListener("click", displaymessage)
-let messageclick = false
 
-function displaymessage() {
-    messageclick = !messageclick
-    if (messageclick) {
-        let screen = document.querySelector(".times")
-        let p = document.createElement("p")
-        screen.style.backgroundColor = "white"
-        screen.style.color = "black"
-        screen.style.border = "solid "
-        let span = document.querySelectorAll(".times span")
-        span.forEach((ele) => ele.style.display = "none")
+let message = document.getElementById('messageDisplay')
+let innerMsg = document.getElementById('innermessage')
+let hr = document.createElement('hr')
+var msg = document.createElement('p')
 
-        p.innerHTML = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+//showing messages window
+function showMsg() {
+    document.getElementById('timeDisplay').style.display = 'none'
+    document.getElementById('messageDisplay').style.display = 'block'
+    document.getElementById('music').style.color = 'gray'
+    document.getElementById('clock').style.color = 'gray'
+}
+//showing full messages after clicking on message
+function showJavaMsg() {
+    document.getElementById('btnMessage').disabled = true
+    message.style.display = 'none'
+    innerMsg.style.display = 'block'
 
-        screen.appendChild(p)
-    }
-    else {
-        let screen = document.querySelector(".times")
-        let p = document.querySelector(".times p")
+    // var javamsg = document.createElement('p')
+    msg.innerText = "Java is a high-level programming language developed by Sun Microsystems."
+    innerMsg.appendChild(msg)
+    innerMsg.appendChild(hr)
 
-        screen.style.backgroundColor = "black"
-        screen.style.color = "white"
-        screen.style.border = "none "
-        let span = document.querySelectorAll(".times span")
-        span.forEach((ele) => ele.style.display = "block")
-        screen.removeChild(p)
-    }
+}
+function showHtmlMsg() {
+    msg.innerText=''
+    document.getElementById('btnMessage').disabled = true
+    message.style.display = 'none'
+    innerMsg.style.display = 'block'
+    
+    // var htmlmsg = document.createElement('p')
+    msg.innerText = "HTML stands for Hyper Text Markup Language. HTML describes the structure of a Web page."
+    innerMsg.appendChild(msg)
+    innerMsg.appendChild(hr)
+}
+function showCssMsg() {
+    msg.innerText = ''
+    document.getElementById('btnMessage').disabled = true
+    message.style.display = 'none'
+    innerMsg.style.display = 'block'
+    
+    // var cssmsg = document.createElement('p')
+    msg.innerText = "Css is a cascading style sheet used for styling purpose."
+    innerMsg.appendChild(msg)
+    innerMsg.appendChild(hr)
+}
+
+//showing time when clicks on clock button
+function showWatch() {
+    msg.innerText = ''
+    document.getElementById('btnMessage').disabled = false
+    document.getElementById('messageDisplay').style.display = 'none'
+    innerMsg.style.display = 'none'
+    document.getElementById('timeDisplay').style.display = 'block'
+    showTimeDay()
+    document.getElementById('music').style.color = 'white'
+    document.getElementById('clock').style.color = 'white'
 }
