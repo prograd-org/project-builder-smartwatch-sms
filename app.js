@@ -18,3 +18,4 @@ let msgList = [
     msg.style.display = "block";
     msg.textContent = msgList[msgId - 1];
   };
+ 
